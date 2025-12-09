@@ -19,16 +19,16 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <label for="" class="form-label fw-semibold">Image</label>
-                                            <input type="file" name="image" value="{{ old('image') }}" class="form-control shadow-none" id="" placeholder="" value="">
-                                            @error('image')
+                                            <input type="file" name="image_path" value="{{ old('image_path') }}" class="form-control shadow-none" id="" placeholder="" value="">
+                                            @error('image_path')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>
                                         
                                         <div class="col-lg-8">
                                             <label for="" class="form-label fw-semibold">Description</label>
-                                            <textarea name="main_content" id="editor1" class="form-control shadow-none" rows="3">{{ old('description') }}</textarea>
-                                            @error('main_content')
+                                            <textarea name="description" id="editor1" class="form-control shadow-none" rows="3">{{ old('description') }}</textarea>
+                                            @error('description')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                         </div>

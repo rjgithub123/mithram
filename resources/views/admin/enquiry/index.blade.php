@@ -13,28 +13,30 @@
                                     <table id="myTable" class="display table">
                                         <thead>
                                             <tr>
-                                                <th width="10%">S.NO</th>
-                                                <th width="25%">NAME</th>
-                                                <th width="30%">EMAIL</th>
-                                                <th width="20%">COMPANY NAME</th>
-                                                <th width="15%">ACTION</th>
+                                                <th width="10%">Si No</th>
+                                                <th width="25%">Check-In</th>
+                                                <th width="30%">Check-Out</th>
+                                                <th width="30%">Guests</th>
+                                                <th width="30%">No of Bedrooms</th>
+                                                <th width="30%">Bedroom Type</th>
+                                                <th width="30%">Cruise Type</th>
                                             </tr>
                                         </thead>
                                         <tbody>
 
-                                            {{-- @if($contacts->isNotEmpty())
-                                            @foreach($contacts as $index => $contact)
+                                            @if($user->isNotEmpty())
+                                            @foreach($user as $index => $contact)
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
-                                                <td>{{ $contact->name }}</td>
-                                                <td>{{ $contact->email }}</td>
-                                                <td>{{ $contact->company_name }}</td>
-                                                <td>
-                                                    <a href="{{ route('admin.contact_details', $contact->id) }}" class="btn py-02 btn-type3 my-1" title="View Details">View</a>
-                                                </td>
+                                                <td>{{ $contact->date_of_arrival }}</td>
+                                                <td>{{ $contact->date_of_departure }}</td>
+                                                <td>{{ $contact->number_of_guests }}</td>
+                                                <td>{{ $contact->no_of_bedrooms }}</td>
+                                                <td>{{ $contact->bedroom_type }}</td>
+                                                <td>{{ $contact->cruise_type }}</td>
                                             </tr>
                                         @endforeach
-                                        @endif --}}
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>

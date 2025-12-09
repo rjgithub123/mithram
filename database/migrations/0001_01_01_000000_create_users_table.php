@@ -13,18 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('phone')->nullable();
-            $table->string('country')->nullable();
-            $table->string('state')->nullable();
-            $table->string('address')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('email_verified_at')->nullable();
+            $table->string('password')->nullable();
             $table->date('date_of_arrival')->nullable();
             $table->date('date_of_departure')->nullable();
             $table->integer('number_of_guests')->nullable();
-            $table->string('notes')->nullable();
+            $table->string('no_of_bedrooms')->nullable();
+            $table->string('bedroom_type')->nullable();
+            $table->string('cruise_type')->nullable();
+             $table->string('notes')->nullable();
             $table->string('role')->default('user')->comment('user, admin');
             $table->rememberToken();
             $table->timestamps();

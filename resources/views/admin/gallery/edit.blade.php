@@ -1,4 +1,5 @@
 @extends('admin.layouts.app');
+@section('content')
 <section class="content-section col primary-bg-light p-xl-4 p-3">
                     <div class="bg-white rounded-3 shadow-sm p-3">
                         <div class="row">
@@ -19,6 +20,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <label for="" class="form-label fw-semibold">Featured Image</label>
+                                            <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery Image" class="mb-3" style="max-width: 200px; display: block;">
                                             <input type="file" name="image" class="form-control shadow-none" id="" placeholder="" value="{{ old('image', $gallery->image) }}" disabled>
                                             @error('image')
                                         <div class="text-danger">{{ $message }}</div>
@@ -42,3 +44,4 @@
                         </div>
                     </div>
                 </section>
+                @endsection

@@ -36,7 +36,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($gallery as $gallery_data)
+                            @foreach ($gallery as $gallery_data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $gallery_data->title }}</td>
@@ -46,7 +46,7 @@
                                     <button type="button" class="btn py-02 btn-danger my-1" data-bs-toggle="modal" data-bs-target="#confirmDelete{{ $gallery_data->id }}">Delete</button>
                                 </td>
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -55,7 +55,7 @@
     </div>
 
 
-    {{-- @foreach($gallery as $gallery_data)
+    @foreach($gallery as $gallery_data)
     <div class="modal fade" id="confirmDelete{{ $gallery_data->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="confirmDeleteLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -77,6 +77,6 @@
             </div>
         </div>
     </div>
-    @endforeach --}}
+    @endforeach
 </section>
 @endsection

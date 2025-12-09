@@ -21,6 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'date_of_arrival',
+        'date_of_departure',
+        'number_of_guests',
+        'no_of_bedrooms',
+        'bedroom_type',
+        'cruise_type',
+        'notes',
+        'role',
     ];
 
     /**

@@ -2578,3 +2578,99 @@ section,
 .whatsapp-float img {
   width: 35px;
 }
+
+
+/* Mobile enquiry card style */
+
+.enquiry-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* Input card look */
+.form-box .input-group-text {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 18px;
+}
+
+.form-box .form-control,
+.form-box select,
+.form-box textarea {
+  border-radius: 12px !important;
+  padding: 14px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+/* Remove ugly input-group borders */
+.form-box .form-control:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+  box-shadow: none;
+  border-color: #c49c48;
+}
+
+/* Submit Button */
+.enquiry-btn {
+  background: #c49c48;
+  color: white;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+}
+
+.enquiry-btn:hover {
+  background: #c49c48;
+}
+
+/* Mobile Optimisation */
+@media(max-width:768px) {
+  .enquiry-form {
+    padding: 16px;
+  }
+}
+
+/* Floating placeholder for date inputs */
+
+.floating-label {
+    position: relative;
+}
+
+.floating-label label {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+/* When filled or focused – move label up */
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: -6px;
+    font-size: 12px;
+    color: #c49c48;
+    background: #fff;
+    padding: 0 6px;
+}
+
+/* .portfolio-details-slider {
+  height: 50vh;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+} */
+

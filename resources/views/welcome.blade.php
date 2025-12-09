@@ -87,6 +87,109 @@
 
     </section><!-- /Hero Section -->
 
+
+     <!-- Contact Section -->
+<section id="contact" class="contact section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Enquiry</h2>
+    <p>Enquire Now</p>
+  </div>
+
+  <div class="container" data-aos="fade" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+
+        <form method="POST" action="{{ route('contact.submit') }}" class="enquiry-form" data-aos="fade-up" data-aos-delay="200">
+          @csrf
+
+          <!-- Check-in -->
+        <!-- Check-in -->
+<div class="input-group mb-3 form-box floating-label">
+  <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+  <input type="date" class="form-control" name="date_of_arrival"
+         value="{{ old('date_of_arrival') }}" min="{{ date('Y-m-d') }}" required>
+         @error('date_of_arrival')
+            <div class="text-danger">{{ $message }}</div>
+         @enderror
+  <label>Check-in Date</label>
+</div>
+
+<!-- Check-out -->
+<div class="input-group mb-3 form-box floating-label">
+  <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+  <input type="date" class="form-control" name="date_of_departure"
+         value="{{ old('date_of_departure') }}" min="{{ date('Y-m-d') }}">
+         @error('date_of_departure')
+            <div class="text-danger">{{ $message }}</div>
+         @enderror
+  <label>Check-out Date</label>
+</div>
+
+       
+
+          <!-- Guests -->
+          <div class="input-group mb-3 form-box">
+            <span class="input-group-text"><i class="bi bi-people"></i></span>
+            <input type="number" class="form-control" name="number_of_guests"
+                   value="{{ old('number_of_guests') }}" placeholder="Number of Guests" required>
+          </div>
+
+          <!-- Bedrooms -->
+          <div class="input-group mb-3 form-box">
+            <span class="input-group-text"><i class="bi bi-house-door"></i></span>
+            <input type="number" class="form-control" name="no_of_bedrooms"
+                   value="{{ old('no_of_bedrooms') }}" placeholder="Number of Bedrooms" required>
+          </div>
+
+          <!-- Category -->
+          <div class="input-group mb-3 form-box">
+            <span class="input-group-text"><i class="bi bi-list"></i></span>
+            <select class="form-select" name="bedroom_type" required>
+              <option value="" selected disabled>Select Bedrooms</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Premium">Premium</option>
+              <option value="Luxury">Luxury</option>
+              <option value="Suite">Suite</option>
+            </select>
+          </div>
+
+          <!-- Cruise Type -->
+          <div class="input-group mb-3 form-box">
+            <span class="input-group-text"><i class="bi bi-water"></i></span>
+            <select class="form-select" name="cruise_type" required>
+              <option selected disabled>Cruise Type</option>
+              <option value="Day">Day Cruise</option>
+              <option value="Night">Night Cruise</option>
+              <option value="Full Day">Full Day</option>
+              <option value="Sunset">Sunset Cruise</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div class="input-group mb-4 form-box">
+            <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
+            <textarea class="form-control" name="notes" rows="4"
+                      placeholder="Message" required>{{ old('notes') }}</textarea>
+          </div>
+
+          <!-- Button -->
+          <div class="text-center">
+            <button type="submit" class="btn enquiry-btn w-100">
+              Send Enquiry
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
     <!-- About Section -->
    <section id="about" class="about section">
 
@@ -146,7 +249,7 @@
 Book your houseboat today and enjoy a truly refreshing getaway.</p>
           </div>
           <div class="col-xl-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            {{-- <a class="cta-btn align-middle" href="#">Call To Action</a> --}}
           </div>
         </div>
 
@@ -247,21 +350,17 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
 
 
 
-  
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
+    {{-- <section id="pricing" class="pricing section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Pricing</h2>
         <p>What they are saying about us</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
 
      <div class="row gy-3">
 
-  <!-- Standard Package -->
+
   <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
     <div class="pricing-item">
       <h3>Standard</h3>
@@ -273,13 +372,9 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <li class="">Morning Cruise</li>
         <li class="na">Candle Light Dinner</li>
       </ul>
-      <!-- <div class="btn-wrap">
-        <a href="#" class="btn-buy">Book Now</a>
-      </div> -->
+ 
     </div>
-  </div><!-- End Pricing Item -->
-
-  <!-- Deluxe Package -->
+  </div>
   <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
     <div class="pricing-item featured">
       <h3>Deluxe</h3>
@@ -291,13 +386,10 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <li>Evening Tea & Snacks</li>
         <li class="na">Private Honeymoon Decor</li>
       </ul>
-      <!-- <div class="btn-wrap">
-        <a href="#" class="btn-buy">Book Now</a>
-      </div> -->
+    
     </div>
-  </div><!-- End Pricing Item -->
+  </div>
 
-  <!-- Premium Package -->
   <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
     <div class="pricing-item">
       <h3>Premium</h3>
@@ -309,13 +401,9 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <li>Evening Cruise + Morning Cruise</li>
         <li>Special Kerala Fish Fry</li>
       </ul>
-      <!-- <div class="btn-wrap">
-        <a href="#" class="btn-buy">Book Now</a>
-      </div> -->
+    
     </div>
-  </div><!-- End Pricing Item -->
-
-  <!-- Honeymoon Package -->
+  </div>
   <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
     <div class="pricing-item">
       <span class="advanced">Popular</span>
@@ -328,18 +416,15 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <li>Private Cruise Experience</li>
         <li>Welcome Drink + Special Dessert</li>
       </ul>
-      <!-- <div class="btn-wrap">
-        <a href="#" class="btn-buy">Book Now</a>
-      </div> -->
     </div>
-  </div><!-- End Pricing Item -->
+  </div>
 
 </div>
 
 
       </div>
 
-    </section><!-- /Pricing Section -->
+    </section> --}}
 
 
 
@@ -357,7 +442,20 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
   <div class="container">
 
     <div class="row gy-4">
+@if( isset($galleryItems) && count($galleryItems) > 0 )
+      @foreach($galleryItems as $item)
+      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <article>
 
+          <div class="post-img">
+            <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="img-fluid">
+          </div>
+
+          <h2 class="title text-center mt-2">{{ $item->title }}</h2>
+        </article>
+      </div><!-- End item -->
+      @endforeach
+@else
       <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <article>
 
@@ -394,6 +492,8 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
 
         </article>
       </div><!-- End item -->
+@endif
+
 
       
 
@@ -404,96 +504,65 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
 </section><!-- End section -->
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+   {{-- <section id="portfolio-details" class="portfolio-details section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Contact Us</p>
-      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up">
 
-      <div class="container" data-aos="fade" data-aos-delay="100">
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+              
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
 
-        <div class="row gy-4">
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/app-1.jpg" alt="" style="widows: 50%; height: auto;">
+            </div>
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div><!-- End Info Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/product-1.jpg" alt="">
+            </div>
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div><!-- End Info Item -->
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/branding-1.jpg" alt="">
+            </div>
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
+            <div class="swiper-slide">
+  <video controls autoplay muted loop style="width:100%; height:auto;">
+    <source src="assets/img/portfolio/mithram.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
           </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="text" class="form-control" name="phone_no" placeholder="Your Phone Number" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="text" class="form-control" name="country" placeholder="Your Country" required="">
-                </div>
-
-                <!-- <div class="col-md-6 ">
-                  <input type="date" class="form-control" name="date_arrival" placeholder="Your Date of Arrival" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="date" class="form-control" name="date_departure" placeholder="Your Date of Departure" required="">
-                </div> -->
-
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
         </div>
-
+    
       </div>
 
-    </section><!-- /Contact Section -->
+    </section> --}}
+
+
+   
 
   </main>
 
