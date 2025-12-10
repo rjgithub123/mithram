@@ -15,7 +15,7 @@ class StoreGalleryRequest extends FormRequest
     {
         return [
             'title'       => 'required|string|max:255',
-            'image_path'       => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image_path'       => 'required|mimes:jpg,jpeg,png,webp,mp4|max:2048',
             'description' => 'nullable|string',
         ];
     }

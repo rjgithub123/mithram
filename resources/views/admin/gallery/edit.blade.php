@@ -19,7 +19,7 @@
                                         @enderror
                                         </div>
                                         <div class="col-lg-8">
-                                            <label for="" class="form-label fw-semibold">Featured Image</label>
+                                            <label for="" class="form-label fw-semibold">Featured Image/Video</label>
                                             <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="Gallery Image" class="mb-3" style="max-width: 200px; display: block;">
                                             <input type="file" name="image" class="form-control shadow-none" id="" placeholder="" value="{{ old('image', $gallery->image) }}" disabled>
                                             @error('image')

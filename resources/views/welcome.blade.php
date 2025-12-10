@@ -60,10 +60,6 @@
           </div>
         </div>
 
-        
-
-       
-
         <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
           <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
         </a>
@@ -130,8 +126,6 @@
          @enderror
   <label>Check-out Date</label>
 </div>
-
-       
 
           <!-- Guests -->
           <div class="input-group mb-3 form-box">
@@ -447,17 +441,27 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
 
     <div class="row gy-4">
 @if( isset($galleryItems) && count($galleryItems) > 0 )
-      @foreach($galleryItems as $item)
-      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <article>
+      @foreach($galleryItems->sortByDesc('created_at')->take(6) as $item)
+       @php
+        $extension = strtolower(pathinfo($item->image_path, PATHINFO_EXTENSION));
+    @endphp
+      
+    
+  @if(in_array($extension, ['mp4', 'webm', 'ogg']))
 
+  @else
+  <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <article>
           <div class="post-img">
             <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="img-fluid">
           </div>
 
           <h2 class="title text-center mt-2">{{ $item->title }}</h2>
-        </article>
-      </div><!-- End item -->
+          </article>
+            </div>
+          @endif
+       
+    <!-- End item -->
       @endforeach
 @else
       <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -508,43 +512,60 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
 </section><!-- End section -->
 
 
-   {{-- <section id="portfolio-details" class="portfolio-details section">
+   <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up">
 
         <div class="portfolio-details-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-              
-            }
-          </script>
+    <script type="application/json" class="swiper-config">
+{
+  "loop": true,
+  "speed": 600,
+  "autoplay": {
+    "delay": 5000
+  },
+  "slidesPerView": "auto",
+  "autoHeight": true,
+  "navigation": {
+    "nextEl": ".swiper-button-next",
+    "prevEl": ".swiper-button-prev"
+  },
+  "pagination": {
+    "el": ".swiper-pagination",
+    "type": "bullets",
+    "clickable": true
+  }
+}
+</script>
+
           <div class="swiper-wrapper align-items-center">
+@if( isset($galleryItems) && count($galleryItems) > 0 )
+      @foreach($galleryItems as $item)
 
+       @php
+        $extension = strtolower(pathinfo($item->image_path, PATHINFO_EXTENSION));
+    @endphp
+<div class="swiper-slide">
+  @if(in_array($extension, ['mp4', 'webm', 'ogg']))
+  <video controls autoplay muted loop style="width:100%; height:auto;">
+    <source src="{{ asset('storage/' . $item->image_path) }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  @else
+              <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" style="widows: 100%; height: auto;">
+  @endif
+
+            </div>
+
+      @endforeach
+@else
+          
             <div class="swiper-slide">
-              <img src="assets/img/portfolio/app-1.jpg" alt="" style="widows: 50%; height: auto;">
+              <img src="{{ asset('assets/img/houseboat-sliders/houseboat2.png') }}" alt="">
             </div>
 
             <div class="swiper-slide">
-              <img src="assets/img/portfolio/product-1.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/branding-1.jpg" alt="">
+              <img src="{{ asset('assets/img/portfolio/branding-1.jpg') }}" alt="">
             </div>
 
             <div class="swiper-slide">
@@ -553,7 +574,7 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
     Your browser does not support the video tag.
   </video>
 </div>
-
+@endif
 
           </div>
           <div class="swiper-button-prev"></div>
@@ -563,10 +584,7 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
     
       </div>
 
-    </section> --}}
-
-
-   
+    </section>
 
   </main>
 

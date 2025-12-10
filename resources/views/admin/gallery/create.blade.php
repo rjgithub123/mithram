@@ -18,7 +18,7 @@
                                         @enderror
                                         </div>
                                         <div class="col-lg-8">
-                                            <label for="" class="form-label fw-semibold">Image</label>
+                                            <label for="" class="form-label fw-semibold">Image/Video</label>
                                             <input type="file" name="image_path" value="{{ old('image_path') }}" class="form-control shadow-none" id="" placeholder="" value="">
                                             @error('image_path')
                                         <div class="text-danger">{{ $message }}</div>
