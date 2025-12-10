@@ -16,12 +16,16 @@
       <div id="hero-carousel" data-bs-interval="5000" class="carousel carousel-fade" data-bs-ride="carousel">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background: url('assets/img/houseboat-sliders/houseboat2.png') center center; background-size: cover;">
-          <div class="carousel-container">
-            <h2 class="animate__animated animate__fadeInDown">Welcome to Mithram</h2>
-            <p class="animate__animated animate__fadeInUp">Experience Alleppey like never before. Glide through calm backwaters, enjoy delicious onboard cuisine, and relax in the comfort of our beautifully crafted houseboats. Your peaceful escape starts here.</p>
-          </div>
-        </div>
+        <div class="carousel-item active" 
+     style="background: url('{{ asset('assets/img/houseboat-sliders/houseboat2.png') }}') center center; background-size: cover;">
+    <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Welcome to Mithram</h2>
+        <p class="animate__animated animate__fadeInUp">
+            Experience Alleppey like never before. Glide through calm backwaters, enjoy delicious onboard cuisine, and relax in the comfort of our beautifully crafted houseboats. Your peaceful escape starts here.
+        </p>
+    </div>
+</div>
+
 
        
         <!-- Slide 2 -->
@@ -33,7 +37,7 @@
         </div> -->
 
         <!-- Slide 3 -->
-        <div class="carousel-item"  style="background: url('assets/img/houseboat-sliders/houseboat.jpg') center center; background-size: cover;">
+        <div class="carousel-item"  style="background: url('{{ asset('assets/img/houseboat-sliders/houseboat.jpg') }}') center center; background-size: cover;">
           <div class="carousel-container">
             <h2 class="animate__animated animate__fadeInDown">Your Backwater Retreat</h2>
             <p class="animate__animated animate__fadeInUp">Escape the everyday and immerse yourself in the serene beauty of Alleppey. Relax on our handcrafted houseboats, delight in fresh local flavors, and embrace a peaceful, unforgettable journey.</p>
@@ -41,7 +45,7 @@
         </div>
 
          <!-- Slide 4 -->
-        <div class="carousel-item"  style="background: url('assets/img/houseboat-sliders/houseboat3.jpg') center center; background-size: cover;">
+        <div class="carousel-item"  style="background: url('{{ asset('assets/img/houseboat-sliders/houseboat3.jpg') }}') center center; background-size: cover;">
           <div class="carousel-container">
             <h2 class="animate__animated animate__fadeInDown">Experience The Nature Magic</h2>
             <p class="animate__animated animate__fadeInUp">Discover the enchanting backwaters of Alleppey aboard our traditional houseboats. Immerse yourself in nature's tranquility, savor authentic Kerala cuisine, and create unforgettable memories on this serene journey.</p>
@@ -49,7 +53,7 @@
         </div>
 
           <!-- Slide 4 -->
-        <div class="carousel-item"  style="background: url('assets/img/houseboat-sliders/houseboat5.jpg') center center; background-size: cover;">
+        <div class="carousel-item"  style="background: url('{{ asset('assets/img/houseboat-sliders/houseboat5.jpg') }}') center center; background-size: cover;">
           <div class="carousel-container">
             <h2 class="animate__animated animate__fadeInDown">Serenity on the Backwaters</h2>
             <p class="animate__animated animate__fadeInUp">Discover the enchanting backwaters of Alleppey aboard our traditional houseboats. Immerse yourself in nature's tranquility, savor authentic Kerala cuisine, and create unforgettable memories on this serene journey.</p>
@@ -460,7 +464,7 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <article>
 
           <div class="post-img">
-            <img src="assets/img/houseboat.jpg" alt="Houseboat Image 1" class="img-fluid">
+            <img src="{{ asset('assets/img/houseboat.jpg') }}" alt="Houseboat Image 1" class="img-fluid">
           </div>
 
           <!-- Removed blog category, title, author, date -->
@@ -473,7 +477,7 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <article>
 
           <div class="post-img">
-            <img src="assets/img/houseboat1.jpg" alt="Houseboat Image 2" class="img-fluid">
+            <img src="{{ asset('assets/img/houseboat1.jpg') }}" alt="Houseboat Image 2" class="img-fluid">
           </div>
 
           <h2 class="title text-center mt-2">Premium Houseboat Deck</h2>
@@ -485,7 +489,7 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
         <article>
 
           <div class="post-img">
-            <img src="assets/img/houseboat.jpg" alt="Houseboat Image 3" class="img-fluid">
+            <img src="{{ asset('assets/img/houseboat.jpg') }}" alt="Houseboat Image 3" class="img-fluid">
           </div>
 
           <h2 class="title text-center mt-2">Relaxing Sunset Cruise</h2>
