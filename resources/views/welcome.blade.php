@@ -565,15 +565,19 @@ Book your houseboat today and enjoy a truly refreshing getaway.</p>
             </div>
 
             <div class="swiper-slide">
-              <img src="{{ asset('assets/img/portfolio/branding-1.jpg') }}" alt="">
+              <img src="{{ asset('assets/img/houseboat-sliders/houseboat.jpg') }}" alt="">
             </div>
 
             <div class="swiper-slide">
+              <img src="{{ asset('assets/img/houseboat-sliders/houseboat5.jpg') }}" alt="">
+            </div>
+
+            {{-- <div class="swiper-slide">
   <video controls autoplay muted loop style="width:100%; height:auto;">
     <source src="assets/img/portfolio/mithram.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-</div>
+</div> --}}
 @endif
 
           </div>
